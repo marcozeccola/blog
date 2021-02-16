@@ -1,0 +1,68 @@
+/*================= GENARALI =================*/
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {font-size: 1.2rem; letter-spacing: 1px; }
+
+h1,h2,h3,h4,ul,li,a,p,input,label,button,div,footer { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; color: #444;}
+
+ul {list-style-type: none;}
+
+a {text-decoration: none;} 
+
+img {  vertical-align: middle;}
+
+form h2 {font-size: 2.4em;font-weight: 900; margin-bottom: 40px;}
+
+input {padding: 10px 12px;border-radius: 4px; border: 1px solid #ddd;font-size: 1em; width: 100%;}
+
+label { display: block; margin: 20px 0 10px;}
+.navbar-item:hover{background-color: transparent!important;}
+button { margin-top: 30px; border-radius: 36px; background: #FEE996; border: 0; text-transform: uppercase; font-weight: 700; font-size: 0.8em; display: block; padding: 10px 16px; letter-spacing: 2px;}
+nav{ margin: 20px 40px; }
+main{margin: 20px 40px;}
+/*Material icons*/
+span.material-icons{font-size: 2.1rem!important;}
+
+.material-icons{  line-height: inherit!important;}
+
+.background-home{  background-image: url('https://images.unsplash.com/photo-1516817153573-7b617832a471?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;}
+/*form errors*/
+.error {  color: #ff0099;  margin: 10px 2px;  font-size: 0.8em;  font-weight: bold;}
+
+/*================= ARTICOLI =================*/
+.blogs{ margin: 20px 40px; }
+.subtitle{ padding: 5px!important;}
+
+.width-25{  width: 25%!important; float:left!important;}
+
+.blogs-select{float:left; width:25%;}
+
+.blogs-btn{float:right; width:75%;} 
+/*================= SLIDESHOW =================*/
+.slide { display: none; }
+
+.slide>img { display: block;  margin-left: auto; margin-right: auto; max-height: 500px !important;}
+
+.slideshow-container { max-height: 500px !important; position: relative; margin: auto;}
+
+.prev,
+.next { cursor: pointer; position: absolute; top: 50%; width: auto; padding: 16px;  margin-top: -22px; color: #00d1b2; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none;}
+
+.next {  right: 0; border-radius: 3px 0 0 3px;}
+
+.prev:hover,
+.next:hover { background-color: #00d1b2;}
+
+.text {  color: #f2f2f2; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;}
+ 
+footer { text-align: center; margin-top: 120px;  color: #aaa;}
+
+/*Smarphones BULMA width*/
+@media (max-width: 1024px) {
+
+  .width-25{width: 100%!important;  }
+  
+  .blogs-select{float:left; width:75%;}
+
+  .blogs-btn{float:right; width:25%;}
+}

@@ -1,0 +1,87 @@
+<!--Render di tutti i documetni cliccabili-->
+<%- include('partials/header'); -%>
+
+<div class="blogs content">
+
+  <h2 class="subtitle">Articoli:</h2>
+  <form action="/blogs" method="get">
+    <div class="blogs-select">
+      <div class="select">
+        <select name="category" id="category" required>
+          <option value="" selected disabled hidden>Categorie</option>
+          <option value="Kayak">Kayak</option>
+          <option value="Informatica">Informatica</option>
+          <option value="Storia">Storia</option> 
+          <option value="Telecomunicazioni">Telecomunicazioni</option>
+          <option value="Altro">Altro</option>
+        </select>
+      </div>
+    </div>
+    <div class="blogs-btn">
+      <button style="margin-top:0px!important;">FILTRA</button>
+    </div>
+    <div style="clear:both; font-size:1px;"></div>
+  </form>
+  <br> 
+
+  <% if (blogs.length > 0) { %>
+  <% let nblogs =0, scalaBlog=blogs.length;%>
+ 
+  <% blogs.forEach(blog => { %>
+
+  <% if(nblogs%4 ==0  && !(scalaBlog <= blogs.length%4)) {%>
+    <div class="columns is-desktop">
+  <% }%>
+ 
+    <%let date = blog.createdAt.toString().split(" ");%>
+    <%date = date[2]+'-'+date[1]+'-'+date[3]; %>
+
+    <%if(scalaBlog <= blogs.length%4) {%>
+      <div class="card width-25" style="margin-right: 15px!important; margin-top: 15px!important;" href="/blogs/<%= blog._id %>"> 
+    <% }else{%> 
+      <div class="card column" style="margin-right: 15px!important; margin-top: 15px!important;" href="/blogs/<%= blog._id %>">
+    <% }%>
+    
+    <a href="/blogs/<%= blog._id %>">
+       
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src='/<%= blog.image[0].path %>'>
+        </figure>
+      </div>
+
+      <div class="card-content">
+
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4"><%= blog.title %></p>
+            <small class="subtitle is-6">di <%= blog.author %></small>
+          </div>
+        </div>
+
+        <div class="content">
+          <%= blog.snippet %>
+          <br>
+          <small><%=date%></small>
+        </div>
+
+      </div>
+
+    </a>
+    </div>
+    <% nblogs++;%>
+ 
+    <% if(nblogs%4 ==0  && !(scalaBlog <= blogs.length%4)) {%>
+      </div>
+    <%}scalaBlog--; console.log(scalaBlog);%>
+   
+  <% }) %>
+  
+  <% } else { %>
+    
+  <p>Nulla ancora caricato</p>
+  <% } %>
+
+</div>
+<div style="clear:both; font-size:1px;"></div>
+<%- include("./partials/footer.ejs") %>

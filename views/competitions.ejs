@@ -1,0 +1,85 @@
+<!--Mostra gare, con filtri-->
+
+<%- include('partials/header'); -%>
+<main>
+<table class="table">
+     <thead>
+          <th>Tipo di competizione</th>
+          <th>Anno</th> 
+          <th>Categoria</th>
+          <th>Sesso</th> 
+     </thead>
+     <tbody>
+          <form action="/competitions" method="get">
+               <td>
+                    <div class="select">
+                         <select name="type" >
+                              <option value=""></option>
+                              <option value="ICF World Campionships">ICF World Campionships</option>
+                         </select>
+                    </div>
+               </td>
+               <td>
+                    <input type="text" id="year" name="year" value=""> 
+               </td> 
+               <td>
+                    <div class="select">
+                         <select name="category" >
+                              <option value=""></option> 
+                              <option value="C1">C1</option> 
+                              <option value="K1">K1</option> 
+                              <option value="C2">C2</option> 
+                              <option value="K1-Squadre">K1 a squadre</option>
+                              <option value="C1-Squadre">C1 a squadre</option>  
+                              <option value="C2-Squadre">C2 a squadre</option>
+                         </select>
+                    </div>
+               </td>
+               <td>
+                    <div class="select">
+                         <select name="sex" >
+                              <option value=""> </option> 
+                              <option value="M">M</option> 
+                              <option value="F">F</option>  
+                         </select>
+                    </div>
+               </td>
+               <td>
+                    <button style="margin-top:0px!important;">FILTRA</button>
+               </td>
+          </form>
+     </tbody>
+     <% if(competitions.length>0){%>
+     <thead>
+          <th>Tipo di competizione</th>
+          <th>Anno e località</th>
+          <th>Categoria</th>
+          <th>Oro</th>
+          <th>Argento</th>
+          <th>Bronzo</th>
+     </thead>
+
+     <tbody>
+          <% competitions.forEach(competition => { %>
+          <tr>
+               <td><%= competition.type%></td>
+               <td><%= competition.year %>, <%= competition.place %></td>
+               <td><%= competition.category %>, <%= competition.sex %></td>
+               <td><%= competition.gold.Name %> <%= competition.gold.Surname %>, <%= competition.gold.State %></td>
+               <td><%= competition.silver.Name %> <%= competition.silver.Surname %>, <%= competition.silver.State %>
+               </td>
+               <td><%= competition.bronze.Name %> <%= competition.bronze.Surname %>, <%= competition.bronze.State %>
+               </td>
+          </tr>
+          <% }) %>
+     </tbody>
+     <%}else{%>
+          <tbody>
+               <td>
+                    Nessuna competizione trovata
+               </td>
+          </tbody>
+     <%}%>
+</table>
+</main>
+<%- include('partials/footer'); -%>

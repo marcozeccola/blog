@@ -1,0 +1,65 @@
+<footer class="footer">
+     <div class="container">
+          <div class="columns">
+               <div class="column is-4">
+                    <p class="footer-link-title has-text-weight-bold  ">Menu</p>
+                    <br>
+                    <a class="footer-link-title" href="/">Home</a>
+                    <br>
+                    <br>
+                    <a class="footer-link-title" href="/blogs">Articoli</a>
+                    <br>
+                    <br>
+                    <a class="footer-link-title" href="/competitions">Gare</a> 
+               </div>
+               <div class="column is-4">
+                    <p class="footer-link-title has-text-weight-bold  ">Seguimi</p>
+                    <div class="social-media">
+                    <br>
+                         <a class="social-link instagram" href="https://instagram.com/marcozeccola" target="_blank">
+                              <div class="icon instagram">
+                                   <img src="/icons/instagram.png" alt="">
+                              </div> 
+                              <p>Instagram</p>
+                         </a>
+                         <br>
+                         <a class="social-link github" href="https://github.com/marcozeccola" target="_blank">
+                              <div class="icon github">
+                                        <img src="/icons/github.webp" alt=""> 
+                              </div> 
+                              <p>GitHub</p>
+                         </a>
+
+                    </div>
+               </div>
+               <div class="column is-4">
+                    <p class="footer-link-title has-text-weight-bold  ">ADMIN</p>
+                    <% if (user){ %>
+                    <br>
+                    <a class="footer-link-title footer-text" ><%= user.email %></a>
+                    <br>
+                    <a class="footer-link-title" href="/logout"><strong>LOG OUT</strong></a> 
+                    <br>
+                    <br>
+                    <a class="footer-link-title" href="/signup">AGGIUNGI ADMIN</a> 
+                    <br>
+                    <a class="footer-link-title" href="/createBlog">SCRIVI ARTICOLO</a> 
+                    <br>
+                    <a class="footer-link-title" href="/createCompetition">AGGIUNGI GARA</a> 
+                    <br>
+                    <% }else{%>
+                         <br>
+                    <a class="footer-text" href="/login"><strong>Entra</strong></a>
+                    <% }%> 
+               </div>
+          </div>
+          <hr>
+          <div class="footer-bottom has-text-centered">
+               &copy; 2021 <a href="mailto:marcozeccolas@gmail.com">Marco Zeccola</a>
+          </div>
+     </div>
+</footer>
+
+</body>
+
+</html>

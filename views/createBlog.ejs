@@ -1,0 +1,39 @@
+<%- include('./partials/header'); -%>
+<main>
+  <form action="/blogs" enctype="multipart/form-data" method="POST">
+
+    <input type="text" name="author" value='<%= user.email %>'' hidden required>
+      <label for="title">Titolo:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="snippet">In breve:</label>
+      <input type="text" id="snippet" name="snippet" required>
+      <label for="category">Categoria:</label>
+      <div class="select">
+        <select name="category" id="category" required>
+             <option value="Kayak">Kayak</option> 
+             <option value="Informatica">Informatica</option> 
+             <option value="Storia">Storia</option> 
+             <option value="Telecomunicazioni">Telecomunicazioni</option>
+             <option value="Altro">Altro</option> 
+        </select>
+      </div>
+      <label for="body">Testo:</label>
+      <textarea name="body"></textarea>
+      <div class="file">
+        <label class="file-label">
+          <input class="file-input" type="file" name="img" multiple required>
+          <span class="file-cta">
+            <span class="file-label">
+              Scegli immagini
+            </span>
+          </span>
+        </label>
+      </div>
+      <button>Invio</button>
+  
+    </form>
+</main>
+
+
+<%- include('./partials/footer'); -%>
+ 

@@ -1,0 +1,96 @@
+<!--Pagina con input per aggiungere gara-->
+<%- include('partials/header'); -%>
+
+<% const stati = ['Italia', 'Francia', 'Repubblica Ceca', 'Svizzera', 'Germania Est', 'Germania Ovest'];%>
+
+<main>
+<form action="/competitions" method="POST">
+
+     <label for="type">Tipo di competizione:</label>
+     <div class="select">
+          <select name="type" required>
+               <option value="ICF World Campionships">ICF World Campionships</option> 
+          </select>
+     </div>
+     <label for="year">Anno:</label>
+     <input type="text" id="year" name="year" required> 
+     <label for="place">Città:</label>
+     <input type="text" id="place" name="place" required>
+     <br>
+     <div class="select">
+          <select name="category" required>
+               <option value="C1">C1</option> 
+               <option value="K1">K1</option> 
+               <option value="C2">C2</option> 
+               <option value="K1-Squadre">K1 a squadre</option>
+               <option value="C1-Squadre">C1 a squadre</option>  
+               <option value="C2-Squadre">C2 a squadre</option>
+          </select>
+     </div>
+     <div class="select">
+          <select name="sex" required>
+               <option value="M">M</option> 
+               <option value="F">F</option>  
+          </select>
+     </div>
+
+     <label for="place">Oro:</label>
+     <div class="columns on-desktop">
+          <div class="column">
+               <input type="text" id="goldName" name="goldName" required>
+          </div>
+          <div class="column">
+               <input type="text" id="goldSurname" name="goldSurname" required>
+          </div>
+     </div>
+
+     <div class="select">
+          <select name="goldState" required>
+               <% stati.forEach(stato =>{ %>
+               <option value='<%= stato%>'><%= stato%></option>  
+               <% }) %>
+          </select>
+     </div>
+
+     <label for="place">Argento:</label>
+     <div class="columns on-desktop">
+          <div class="column">
+               <input type="text" id="silverName" name="silverName" required>
+          </div>
+          <div class="column">
+               <input type="text" id="silverSurname" name="silverSurname" required>
+          </div>
+     </div>
+
+     <div class="select">
+          <select name="silverState" required>
+               <% stati.forEach(stato =>{ %>
+                    <option value='<%= stato%>'><%= stato%></option>  
+               <% }) %>
+          </select>
+     </div> 
+
+     <label for="place">Bronzo:</label>
+     <div class="columns on-desktop">
+          <div class="column">
+               <input type="text" id="bronzeName" name="bronzeName" required>
+          </div>
+          <div class="column">
+               <input type="text" id="bronzeSurname" name="bronzeSurname" required>
+          </div>
+     </div>
+
+     <div class="select">
+          <select name="bronzeState" required>
+               <% stati.forEach(stato =>{ %>
+                    <option value='<%= stato%>'><%= stato%></option>  
+               <% }) %>
+          </select>
+     </div>
+
+     <button >Invio</button>
+
+</form>
+     
+</main>
+<%- include('partials/footer'); -%>

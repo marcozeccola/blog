@@ -1,0 +1,77 @@
+<%if(title=='Home'){%>
+<nav class="navbar is-fixed-top" style="background-color: transparent!important;" role="navigation"
+  aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item has-text-white" href="/">
+      <b>MZ</b>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarID">
+      <span aria-hidden="true" class="has-text-white"></span>
+      <span aria-hidden="true" class="has-text-white"></span>
+      <span aria-hidden="true" class="has-text-white"></span>
+    </a>
+  </div>
+
+  <div id="navbarID" class="navbar-menu">
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-warning" href="/">
+        Home
+      </a>
+      <a class="navbar-item has-text-warning" href="/blogs">
+        Articoli
+      </a>
+      <a class="navbar-item has-text-warning" href="/competitions">
+        Gare
+      </a>
+    </div>
+</nav>
+<%}else{%>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <b>MZ</b>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarID">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarID" class="navbar-menu">
+
+    <div class="navbar-end">
+      <a class="navbar-item" href="/">
+        Home
+      </a>
+      <a class="navbar-item" href="/blogs">
+        Articoli
+      </a>
+      <a class="navbar-item" href="/competitions">
+        Gare
+      </a>
+    </div>
+</nav>
+<%}%>
+
+  
+
+
+<script>
+  //navbar init e gestione click su ham. button
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    if (navbarBurgers.length > 0) {
+      navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+          const target = document.getElementById(el.dataset.target);
+          el.classList.toggle('is-active');
+          target.classList.toggle('is-active');
+        });
+      });
+    }
+  });
+</script>
