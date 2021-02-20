@@ -1,7 +1,7 @@
 <!--Pagina con input per aggiungere gara-->
 <%- include('partials/header'); -%>
 
-<% const stati = ['Italia', 'Francia', 'Repubblica Ceca', 'Svizzera', 'Germania Est', 'Germania Ovest'];%>
+<% const stati = ['Italia','Yugoslavia','Cecoslovacchia', 'Canada','Francia', 'Repubblica Ceca','Australia','Nuova Zelanda','Cina','Brasile', 'Svizzera', 'Germania Est', 'Germania Ovest','Slovenia', 'Germania','Austria','Russia','Spagna','Inghilterra','Stati Uniti','Slovacchia','Polonia'].sort();%>
 
 <main>
 <form action="/competitions" method="POST">
@@ -19,18 +19,14 @@
      <br>
      <div class="select">
           <select name="category" required>
-               <option value="C1">C1</option> 
                <option value="K1">K1</option> 
-               <option value="C2">C2</option> 
-               <option value="K1-Squadre">K1 a squadre</option>
-               <option value="C1-Squadre">C1 a squadre</option>  
-               <option value="C2-Squadre">C2 a squadre</option>
+               <option value="C1">C1</option>
           </select>
      </div>
      <div class="select">
           <select name="sex" required>
-               <option value="M">M</option> 
                <option value="F">F</option>  
+               <option value="M">M</option> 
           </select>
      </div>
 

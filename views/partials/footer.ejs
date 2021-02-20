@@ -2,38 +2,45 @@
      <div class="container">
           <div class="columns">
                <div class="column is-4">
-                    <p class="footer-link-title has-text-weight-bold  ">Menu</p>
+                    <p class="has-text-weight-bold has-text-centered ">Grazie per essere passato!</p>
                     <br>
-                    <a class="footer-link-title" href="/">Home</a>
-                    <br>
-                    <br>
-                    <a class="footer-link-title" href="/blogs">Articoli</a>
-                    <br>
-                    <br>
-                    <a class="footer-link-title" href="/competitions">Gare</a> 
-               </div>
-               <div class="column is-4">
-                    <p class="footer-link-title has-text-weight-bold  ">Seguimi</p>
-                    <div class="social-media">
-                    <br>
-                         <a class="social-link instagram" href="https://instagram.com/marcozeccola" target="_blank">
-                              <div class="icon instagram">
-                                   <img src="/icons/instagram.png" alt="">
-                              </div> 
-                              <p>Instagram</p>
-                         </a>
+                    <div class="content has-text-centered">
+                         <p>Questo sito è pensato per gli appassionati di kayak e/o canoa slalom, nella sezione <strong><a href="/competitions">gare</a></strong> si possono trovare i risultati delle competizioni più importanti di questo sport.</p>
                          <br>
-                         <a class="social-link github" href="https://github.com/marcozeccola" target="_blank">
-                              <div class="icon github">
-                                        <img src="/icons/github.webp" alt=""> 
-                              </div> 
-                              <p>GitHub</p>
-                         </a>
-
                     </div>
                </div>
                <div class="column is-4">
-                    <p class="footer-link-title has-text-weight-bold  ">ADMIN</p>
+                    <div class="content has-text-centered">
+                         <p>Nella sezione <strong><a href="/blogs">articoli</a></strong> potete leggere molti articoli su una grande varietà di argomenti dall'informatica alla canoa.</p>
+                    </div>
+                    <br> 
+                    <div class="social-media">
+                    <br>
+                         <a  href="https://instagram.com/marcozeccola" target="_blank">
+                              <div class="icon instagram">
+                                   <img src="/icons/instagram.png" alt="">
+                              </div> 
+                         </a> 
+                         <a  href="https://github.com/marcozeccola" target="_blank">
+                              <div class="icon github">
+                                        <img src="/icons/github.webp" alt=""> 
+                              </div> 
+                         </a>
+                         <br>
+                         <u>
+                              <a href="https://github.com/marcozeccola/blog">Codice sito</a>
+                         </u>
+                    </div>
+               </div>
+               <div class="column is-4">
+                    <p class="footer-link-title has-text-weight-bold ">Menu</p>
+                    <br>
+                    <a class="footer-link-title" href="/">Home</a> 
+                    <br>
+                    <a class="footer-link-title" href="/blogs">Articoli</a> 
+                    <br>
+                    <a class="footer-link-title" href="/competitions">Gare</a> 
+                    <br> <br>
                     <% if (user){ %>
                     <br>
                     <a class="footer-link-title footer-text" ><%= user.email %></a>
@@ -48,14 +55,14 @@
                     <a class="footer-link-title" href="/createCompetition">AGGIUNGI GARA</a> 
                     <br>
                     <% }else{%>
-                         <br>
-                    <a class="footer-text" href="/login"><strong>Entra</strong></a>
+                    <a class="footer-text" href="/login"><strong>ADMIN</strong></a>
                     <% }%> 
                </div>
+               
           </div>
           <hr>
           <div class="footer-bottom has-text-centered">
-               &copy; 2021 <a href="mailto:marcozeccolas@gmail.com">Marco Zeccola</a>
+              <a href="mailto:marcozeccolas@gmail.com">Marco Zeccola</a> &copy; 2021 
           </div>
      </div>
 </footer>

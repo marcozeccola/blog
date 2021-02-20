@@ -64,17 +64,31 @@ module.exports.blog_details = async (req, res) => {
 const filterPath = (value) => {
   return value.path;
 }
+
+//cambia il nome dei file nei tag img con qyello creato back-end
+const modifyBody = (body, imgsArray)=>{
+  imgsArray.forEach(img => {
+    body= body.replace(img.originalname, '/'+img.path);
+  });
+  return body;
+}
+
 //creazione documento nel db
 module.exports.blog_create_post = async (req, res) => {
+
   //array dei path delle immagini
-  const image = req.files.filter(filterPath);
+  const images = req.files.filter(filterPath);
+
+  //body modificato con src con nomi delle immagini modificati back-end
+  const body = modifyBody(req.body.body, req.files);
+
   const blog = new Blog({
     title: req.body.title,
     snippet: req.body.snippet,
-    body: req.body.body,
+    body: body,
     author: req.body.author,
     category: req.body.category,
-    image: image
+    image: images
   });
 
   try {

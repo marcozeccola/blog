@@ -2,7 +2,7 @@
 <%- include('partials/header'); -%>
  <main>
 
-
+<p id="top"></p>
 <div class="details content">
 
     <!--titolo-->
@@ -34,12 +34,12 @@
     </div>
 
     <!--elimina post-->
-    <% if (user){ %>
+    <% if (user  && user.email=="marcozeccolas@gmail.com"){ %>
     <a class="elimina has-text-primary" data-doc="<%= blog._id %>">
         ELIMINA ARTICOLO
     </a>
     <% } %>
-
+    <u><a href="#top">TORNA ALL'INIZIO</a></u>
 </div>
 </main>
 <%- include("./partials/footer.ejs") %>

@@ -46,11 +46,15 @@ module.exports.competition_get = async (req, res) => {
                const search = querystring.parse(queryStr.substring(1));
                
                //query con oggetto con argomenti della query String
-               result = await Competition.find(filtraGara(search));
+               result = await Competition.find(filtraGara(search)).sort({
+                    year: -1
+               });
 
           } else {
                //se non c'è query string mostra tutte le gare
-               result = await Competition.find();
+               result = await Competition.find().sort({
+                    year: -1
+               });
           }
 
           res.render('competitions', {

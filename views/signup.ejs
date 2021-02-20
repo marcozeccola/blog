@@ -47,7 +47,6 @@
             });
             //se è andato a buon fine è l'id utente altrimenti un oggetto con gli errori
             const data = await res.json();
-            console.log(data.user);
             //stampa errori
             if (data.errors) {
                 emailError.textContent = data.errors.email;
