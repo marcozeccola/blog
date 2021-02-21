@@ -9,32 +9,37 @@
 
 <url>
   <loc>https://marcozeccola.herokuapp.com/</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://marcozeccola.herokuapp.com/blogs</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://marcozeccola.herokuapp.com/competitions</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://marcozeccola.herokuapp.com/login</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://marcozeccola.herokuapp.com/blogs/603277a3153c9e000480abb3</loc>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://marcozeccola.herokuapp.com/blogs/602af91cbca411eafd3f91db</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://marcozeccola.herokuapp.com/blogs/6021aeab982faf31667ac77b</loc>
-  <lastmod>2021-02-19T21:10:28+00:00</lastmod>
+  <lastmod>2021-02-21T15:15:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 

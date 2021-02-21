@@ -2,6 +2,7 @@ const isString = (value) => {
      return value != '';
 }
 
+//controllo dati e submit del form
 document.querySelector('#blog-submit').onclick = (e) => {
 
      let titleError = document.querySelector('#titleError');

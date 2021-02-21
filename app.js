@@ -1,17 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
+//const morgan = require('morgan');
 const { getUser } = require('./middleware/authMiddelware');
 const routes = require('./routes/routes');
 const dotenv = require('dotenv');
 
 const app = express();
 dotenv.config();
-
 let PORT = process.env.PORT || 5400;
+
 //middleware
-app.use('/uploads',express.static('uploads'));
+app.use('/uploads', express.static('uploads'));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs');
 
 //connessione db
-const dbURI = 'mongodb+srv://marco:ciao@blog.0ofpd.mongodb.net/blog?retryWrites=true&w=majority';
+const dbURI = process.env.DB_URI;
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,

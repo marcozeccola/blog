@@ -10,7 +10,6 @@ const {
 const {
     upload
 } = require('../middleware/imageMiddelware');
-
 const router = Router();
 
 //User routes

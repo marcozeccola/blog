@@ -1,6 +1,9 @@
 const Blog = require('../models/Blog');
 const querystring = require('querystring');
 const url = require('url');
+const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+dotenv.config();
 
 //pagina creazione documento
 module.exports.blog_create_get = async (req, res) => {
@@ -10,7 +13,7 @@ module.exports.blog_create_get = async (req, res) => {
 }
 
 //rendering dei documenti ordinati per creazione con eventuali filtri
-module.exports.blog_get= async (req, res) => {
+module.exports.blog_get = async (req, res) => {
   try {
     let result;
     const queryStr = url.parse(req.url, true).search;
@@ -64,12 +67,53 @@ module.exports.blog_details = async (req, res) => {
 const filterPath = (value) => {
   return value.path;
 }
+//invia mail con in allegato le foto caricate
+const sendPhMail = ( attachments)=>{
 
-//cambia il nome dei file nei tag img con qyello creato back-end
-const modifyBody = (body, imgsArray)=>{
-  imgsArray.forEach(img => {
-    body= body.replace(img.originalname, '/'+img.path);
+  let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL,
+      pass: process.env.EMAIL_PSW
+    }
   });
+  
+  let mailOptions = {
+    from: process.env.EMAIL,
+    to: process.env.EMAIL +', '+ process.env.SECONDEMAIL ,
+    subject: 'IMPORTANTE! NUOVA IMMAGINE CARICATA',
+    attachments: attachments,
+    text: 'Nuova immagine caricata nel sito'
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    }
+  });
+
+}
+//cambia il nome dei file nei tag img con quello creato back-end ed invia mail
+const imgProcess = (body, imgsArray) => {
+  let attachments=[];
+  //per ogni imamgine caricata 
+  imgsArray.forEach(img => {
+
+    //cambia i valori dei vari attributi
+    body = body.replace(img.originalname, '/' + img.path);
+
+    //crea e inserisce nell'array di allegati il nuovo allegato
+    let localAttach={
+      filename: img.filename,
+      path: __dirname + '/../uploads/' + img.filename
+    };
+
+    attachments.push(localAttach);
+      
+  });
+
+  //invia mail
+  sendPhMail(attachments);
   return body;
 }
 
@@ -80,7 +124,8 @@ module.exports.blog_create_post = async (req, res) => {
   const images = req.files.filter(filterPath);
 
   //body modificato con src con nomi delle immagini modificati back-end
-  const body = modifyBody(req.body.body, req.files);
+  //invia mail a me per poi caricare definitivamente immagini 
+  const body = imgProcess(req.body.body, req.files);
 
   const blog = new Blog({
     title: req.body.title,

@@ -1,5 +1,5 @@
 //mostra nomi immagini caricate
-const getFileNameWithExt = (event) => {
+const getFileName = (event) => {
 
      if (!event || !event.target || !event.target.files || event.target.files.length === 0) {
           return;

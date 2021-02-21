@@ -8,8 +8,14 @@
   <meta name="keywords" content="marcozeccola, Marco Zeccola, kayak, whitewater, canoa, kayak slalom ">
   <link rel="canonical" href="https://marcozeccola.herokuapp.com/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="favicon.png" />
-  <title><%= title %> | Marco Zeccola</title>
+   
+  <title>
+    <% if(title == 'Dettagli'){ %>
+    <%= blog.title%>
+    <% }else{ %>
+    <%= title%>
+    <% }%> | Marco Zeccola
+  </title>
 
   <!--BULMA-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
@@ -17,7 +23,7 @@
   <!--Material Icons CDN-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/style/style.css">
   <!--Tiny CDN-->
   <script src="https://cdn.tiny.cloud/1/z4mb17s3uz1skq8mccnkrlq2amdglxywq5ib1ueno14mlpgi/tinymce/5/tinymce.min.js"
     referrerpolicy="origin"></script>
@@ -26,7 +32,7 @@
 
   <!--GOOGLE Search console-->
   <meta name="google-site-verification" content="e-GKZYjbJ0tHUIBHdZ3WQbrD3B91kW7uOYjhlFdeQPs" />
-  
+
 </head>
 
 <body>
